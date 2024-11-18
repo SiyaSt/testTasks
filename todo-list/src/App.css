@@ -6,8 +6,8 @@
     font-style: normal;
     color: #374375;
     max-width: 90%;
-    margin: auto;
     text-align: center;
+    margin: auto auto 30px;
 }
 
 :active, :hover, :focus {

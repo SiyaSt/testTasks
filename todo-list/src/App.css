@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=League+Spartan:wght@100..900&display=swap');
+
+
+.App {
+    font-family: "Inria Sans", sans-serif;
+    font-style: normal;
+    color: #374375;
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.task-input{
+    display: flex;
+    background-color: #BABDE2;
+    height: 50px;
+    padding: 10px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.task-input input{
+    width: 60%;
+    border-radius: 8px;
+    border: none;
+    background-color: #FFFCF5;
+    font-weight: 600;
+    color: #374375;
+}
+
+.task-input select{
+    width: 18%;
+    border-radius: 8px;
+    border: none;
+    background-color: #DFAEA1;
+    font-weight: 600;
+    color: #374375;
+}
+
+.task-input select option, .filters select option{
+    border-radius: 8px;
+    border: none;
+    background-color: #DFAEA1;
+    font-weight: 600;
+    color: #374375;
+}
+
+.task-input input, .task-input select {
+    padding: 8px;
+    margin-right: 5px;
+}
+
+.task-input button {
+    width: 18%;
+    border-radius: 8px;
+    border: none;
+    background-color: #89515A;
+    font-weight: 600;
+    color: #DFAEA1;
+    padding: 8px 12px;
+}
+
+.filters{
+    display: flex;
+    font-weight: 600;
+    justify-content: left;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.filters select{
+    margin-left: 20px;
+    width: 18%;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    background-color: #DFAEA1;
+    font-weight: 600;
+    color: #374375;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    border-radius: 8px;
+    height: 30px;
+}
+
+.task input[type='checkbox'] {
+    accent-color: #DFAEA1;
+}
+
+.task.completed span {
+    text-decoration: line-through;
+}
+
+.priority {
+    font-weight: 800;
+    margin-right: 10px;
+    color: #BABDE2;
+}
+
+.task-list button{
+    margin-right: 10px;
+    color: #DFAEA1;
+    font-weight: 800;
+    background-color: rgba(137, 81, 90, 0);
+    border: none;
+}
+
+
+.task-list li:nth-child(odd){
+    background-color: rgba(137, 81, 90, 0.87);
+}

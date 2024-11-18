@@ -75,6 +75,7 @@
 
 .filters select{
     margin-left: 20px;
+    padding-left: 8px;
     width: 18%;
     height: 30px;
     border-radius: 8px;
@@ -90,6 +91,8 @@
     margin: 0;
     max-height: 250px;
     overflow-y: auto;
+    scrollbar-color: #BABDE2 #FFFCF5;
+    scrollbar-width: thin;
 }
 
 .task {
@@ -126,4 +129,16 @@
 
 .task-list li:nth-child(odd){
     background-color: rgba(137, 81, 90, 0.87);
+}
+
+
+
+.task-list li:hover{
+    background-color: #DFAEA1;
+    .priority{
+        color: #89515A;
+    }
+    button{
+        color: #374375;
+    }
 }

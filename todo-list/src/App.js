@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from "react";
-import "./App.css";
+import "./styles/App.css";
+import './styles/index.css';
 import SelectComponent from "./components/SelectComponent";
 import TaskList from "./components/TaskList";
 import TaskInput from "./components/TaskInput";
-
-
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/footer";
 
 
 function App() {
@@ -76,37 +78,41 @@ function App() {
         });
 
     return (
-        <div className="App">
-            <TaskInput
-                newTask={newTask}
-                setNewTask={setNewTask}
-                priority={priority}
-                setPriority={setPriority}
-                optionsPriority={optionsPriority}
-                addTask={addTask}
-            />
-
-            <div className="filters">
-                <p>Filters: </p>
-                <SelectComponent
-                    options={optionsFilter}
-                    value={filter}
-                    onChange={(e) => setFilter(e.target.value)}
+        <div>
+            <Header/>
+            <div className="App">
+                <TaskInput
+                    newTask={newTask}
+                    setNewTask={setNewTask}
+                    priority={priority}
+                    setPriority={setPriority}
+                    optionsPriority={optionsPriority}
+                    addTask={addTask}
                 />
 
-                <SelectComponent
-                    options={optionsFilterPriority}
-                    value={priorityFilter}
-                    onChange={(e) => setPriorityFilter(e.target.value)}
-                />
+                <div className="filters">
+                    <p>Filters: </p>
+                    <SelectComponent
+                        options={optionsFilter}
+                        value={filter}
+                        onChange={(e) => setFilter(e.target.value)}
+                    />
 
+                    <SelectComponent
+                        options={optionsFilterPriority}
+                        value={priorityFilter}
+                        onChange={(e) => setPriorityFilter(e.target.value)}
+                    />
+
+                </div>
+                <TaskList
+                    tasks={filteredTasks}
+                    toggleTask={toggleTask}
+                    deleteTask={deleteTask}
+                />
             </div>
-
-            <TaskList
-                tasks={filteredTasks}
-                toggleTask={toggleTask}
-                deleteTask={deleteTask}
-            />
+            <Main/>
+            <Footer/>
         </div>
     );
 }

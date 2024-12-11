@@ -1,5 +1,10 @@
 import React, {useState, useEffect} from "react";
 import "./App.css";
+import SelectComponent from "./components/SelectComponent";
+import TaskListComponent from "./components/TaskListComponent";
+
+
+
 
 function App() {
     const [tasks, setTasks] = useState(() => {
@@ -11,6 +16,25 @@ function App() {
     const [priorityFilter, setPriorityFilter] = useState("all");
     const [newTask, setNewTask] = useState("");
     const [priority, setPriority] = useState("low");
+
+    const optionsFilter = [
+        {value: 'all', label: 'All'},
+        {value: 'active', label: 'Active'},
+        {value: 'completed', label: 'Completed'},
+    ];
+
+    const optionsFilterPriority = [
+        {value: 'all', label: 'All'},
+        {value: 'low', label: 'Low'},
+        {value: 'medium', label: 'Medium'},
+        {value: 'high', label: 'High'},
+    ];
+
+    const optionsPriority = [
+        {value: 'low', label: 'Low'},
+        {value: 'medium', label: 'Medium'},
+        {value: 'high', label: 'High'},
+    ];
 
     useEffect(() => {
         localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -59,54 +83,35 @@ function App() {
                     value={newTask}
                     onChange={(e) => setNewTask(e.target.value)}
                 />
-                <select
+                <SelectComponent
+                    options={optionsPriority}
                     value={priority}
                     onChange={(e) => setPriority(e.target.value)}
-                >
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                </select>
+                />
                 <button onClick={addTask}>Add Task</button>
             </div>
 
             <div className="filters">
-                    <p>Filters: </p>
-                    <select
-                        value={filter}
-                        onChange={(e) => setFilter(e.target.value)}
-                    >
-                        <option value="all">All</option>
-                        <option value="active">Active</option>
-                        <option value="completed">Completed</option>
-                    </select>
-                    <select
-                        value={priorityFilter}
-                        onChange={(e) => setPriorityFilter(e.target.value)}
-                    >
-                        <option value="all">All</option>
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                    </select>
+                <p>Filters: </p>
+                <SelectComponent
+                    options={optionsFilter}
+                    value={filter}
+                    onChange={(e) => setFilter(e.target.value)}
+                />
+
+                <SelectComponent
+                    options={optionsFilterPriority}
+                    value={priorityFilter}
+                    onChange={(e) => setPriorityFilter(e.target.value)}
+                />
+
             </div>
 
-            <ul className="task-list">
-                {filteredTasks.map((task) => (
-                    <li key={task.id} className={`task ${task.completed ? "completed" : ""}`}>
-                        <div>
-                            <input
-                                type="checkbox"
-                                checked={task.completed}
-                                onChange={() => toggleTask(task.id)}
-                            />
-                            <span className="priority">{task.priority}</span>
-                            <span>{task.text}</span>
-                        </div>
-                        <button onClick={() => deleteTask(task.id)}>X</button>
-                    </li>
-                ))}
-            </ul>
+            <TaskListComponent
+                tasks={filteredTasks}
+                toggleTask={toggleTask}
+                deleteTask={deleteTask}
+            />
         </div>
     );
 }

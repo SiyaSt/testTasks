@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
 import "./App.css";
 import SelectComponent from "./components/SelectComponent";
-import TaskListComponent from "./components/TaskListComponent";
+import TaskList from "./components/TaskList";
+import TaskInput from "./components/TaskInput";
 
 
 
@@ -76,20 +77,14 @@ function App() {
 
     return (
         <div className="App">
-            <div className="task-input">
-                <input
-                    type="text"
-                    placeholder="Add new task..."
-                    value={newTask}
-                    onChange={(e) => setNewTask(e.target.value)}
-                />
-                <SelectComponent
-                    options={optionsPriority}
-                    value={priority}
-                    onChange={(e) => setPriority(e.target.value)}
-                />
-                <button onClick={addTask}>Add Task</button>
-            </div>
+            <TaskInput
+                newTask={newTask}
+                setNewTask={setNewTask}
+                priority={priority}
+                setPriority={setPriority}
+                optionsPriority={optionsPriority}
+                addTask={addTask}
+            />
 
             <div className="filters">
                 <p>Filters: </p>
@@ -107,7 +102,7 @@ function App() {
 
             </div>
 
-            <TaskListComponent
+            <TaskList
                 tasks={filteredTasks}
                 toggleTask={toggleTask}
                 deleteTask={deleteTask}

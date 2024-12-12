@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=League+Spartan:wght@100..900&display=swap');
+
+
+.header-navigation{
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-navigation .link{
+    margin-left: 50px;
+    font-family: "Inria Sans", sans-serif;
+    font-style: normal;
+    color: #374375;
+    font-size: 3vh;
+    text-decoration: none;
+}

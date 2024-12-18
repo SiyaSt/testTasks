@@ -5,6 +5,8 @@ import CustomLink from "./CustomLink";
 function Header() {
     return (
         <header className="header">
+            {/* лучше использовать svg и реализовать как реакт компонент */}
+            {/* как-будто бы нет необходимости в width и height */}
             <img src="/images/logo.png" width="138" height="96" alt="" className="header-icon"/>
             <h1 className="header-name">Todo-list</h1>
             <div className="header-navigation">

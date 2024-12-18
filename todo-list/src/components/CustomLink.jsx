@@ -3,6 +3,8 @@ import React from 'react';
 
 function CustomLink({children, to, ...props}) {
     const match = useMatch(to);
+
+    // лучше реализовать через классы по условию (используй classNames)
     let active = match? '#89515A' : '#374375'
     return (
         <Link

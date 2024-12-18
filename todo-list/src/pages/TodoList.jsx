@@ -11,6 +11,8 @@ function TodoList() {
 
     const [filter, setFilter] = useState("all");
     const [priorityFilter, setPriorityFilter] = useState("all");
+
+    // можно вынести в один стейт - useState({ text: "", priority: "low" })
     const [newTask, setNewTask] = useState("");
     const [priority, setPriority] = useState("low");
 
@@ -37,8 +39,10 @@ function TodoList() {
         localStorage.setItem("tasks", JSON.stringify(tasks));
     }, [tasks]);
 
+    // принято называть функции начиная с `handle...` (handleAddTask)
     const addTask = () => {
         if (!newTask.trim()) return;
+        // использовать колбек с prev
         setTasks([
             ...tasks,
             {id: Date.now(), text: newTask, priority, completed: false},
@@ -48,6 +52,7 @@ function TodoList() {
     };
 
     const toggleTask = (id) => {
+        // использовать колбек с prev
         setTasks(
             tasks.map((task) =>
                 task.id === id ? {...task, completed: !task.completed} : task
@@ -56,10 +61,11 @@ function TodoList() {
     };
 
     const deleteTask = (id) => {
+        // использовать колбек с prev
         setTasks(tasks.filter((task) => task.id !== id));
     };
 
-
+    // задание - реализовать фильтры через query params (нужно чтобы при выборе фильтра менялся url)
     const filteredTasks = tasks
         .filter((task) => {
             if (filter === "completed") return task.completed;
@@ -78,6 +84,7 @@ function TodoList() {
                 priority={priority}
                 setPriority={setPriority}
                 optionsPriority={optionsPriority}
+                // onAddTask - пропсы функций начинаются с `on...`, а функция, которая передается с `handle...`
                 addTask={addTask}
             />
 

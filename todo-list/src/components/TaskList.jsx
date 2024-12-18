@@ -4,6 +4,7 @@ function TaskListComponent({ tasks, toggleTask, deleteTask }) {
     return (
         <ul className="task-list">
             {tasks.map((task) => (
+                // можно использовать библиотеку `classnames` - задание написать свою функцию аналог
                 <li key={task.id} className={`task ${task.completed ? "completed" : ""}`}>
                     <div>
                         <input

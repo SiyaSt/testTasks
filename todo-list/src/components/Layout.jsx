@@ -6,7 +6,9 @@ import Footer from "./Footer";
 
 function Layout() {
     return (
+        // если не нужна вложенность, то можно использовать React fragment <></>
         <div>
+            {/* лучше так - <Header/> */}
             <Header></Header>
             <Outlet/>
             <Footer></Footer>

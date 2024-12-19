@@ -9,6 +9,7 @@ import { Main } from "../components/Main/Main";
 import { SelectComponent } from "../components/SelectComponent/SelectComponent";
 import { TaskInput } from "../components/TaskInput/TaskInput";
 import { TaskList } from "../components/TaskList/TaskList";
+import { Logo } from "../components/Logo/Logo";
 
 export {
   HomePage,
@@ -22,4 +23,5 @@ export {
   SelectComponent,
   TaskInput,
   TaskList,
+  Logo,
 };

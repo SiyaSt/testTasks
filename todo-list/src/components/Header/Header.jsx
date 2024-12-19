@@ -1,17 +1,9 @@
-import { CustomLink } from "../../API";
+import { CustomLink, Logo } from "../../API";
 import "./Header.css";
 
 export const Header = () => (
   <header className="header">
-    {/* лучше использовать svg и реализовать как реакт компонент */}
-    {/* как-будто бы нет необходимости в width и height */}
-    <img
-      src="/images/logo.png"
-      width="138"
-      height="96"
-      alt=""
-      className="header-icon"
-    />
+    <Logo />
     <h1 className="header-name">Todo-list</h1>
     <div className="header-navigation">
       <CustomLink className="link" to="/">

@@ -3,7 +3,7 @@ import { SelectComponent, TaskInput, TaskList } from "../../API";
 
 import "./TodoList.css";
 
-function TodoList() {
+export const TodoList = () => {
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem("tasks");
     return savedTasks ? JSON.parse(savedTasks) : [];
@@ -109,6 +109,5 @@ function TodoList() {
       />
     </div>
   );
-}
-
-export default TodoList;
+};
+r;

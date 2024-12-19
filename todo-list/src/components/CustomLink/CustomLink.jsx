@@ -1,6 +1,6 @@
 import { Link, useMatch } from "react-router-dom";
 
-function CustomLink({ children, to, ...props }) {
+export const CustomLink = ({ children, to, ...props }) => {
   const match = useMatch(to);
 
   // лучше реализовать через классы по условию (используй classNames)
@@ -16,6 +16,4 @@ function CustomLink({ children, to, ...props }) {
       {children}
     </Link>
   );
-}
-
-export default CustomLink;
+};

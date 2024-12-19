@@ -5,7 +5,7 @@ export const TaskInput = ({
   newTaskData,
   setNewTaskData,
   optionsPriority,
-  addTask,
+  onAddTask,
 }) => (
   <div className="task-input">
     <input
@@ -21,6 +21,6 @@ export const TaskInput = ({
         setNewTaskData({ ...newTaskData, priority: e.target.value })
       }
     />
-    <button onClick={addTask}>Add Task</button>
+    <button onClick={onAddTask}>Add Task</button>
   </div>
 );

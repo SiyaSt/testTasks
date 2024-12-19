@@ -37,12 +37,11 @@ export const TodoList = () => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
-  // принято называть функции начиная с `handle...` (handleAddTask)
-  const addTask = () => {
+  const handleAddTask = () => {
     if (!newTaskData.text.trim()) return;
-    // использовать колбек с prev
-    setTasks([
-      ...tasks,
+
+    setTasks((prevTasks) => [
+      ...prevTasks,
       {
         id: Date.now(),
         text: newTaskData.text,
@@ -53,18 +52,16 @@ export const TodoList = () => {
     setNewTaskData({ text: "", priority: "low" });
   };
 
-  const toggleTask = (id) => {
-    // использовать колбек с prev
-    setTasks(
-      tasks.map((task) =>
+  const handleToggleTask = (id) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
         task.id === id ? { ...task, completed: !task.completed } : task,
       ),
     );
   };
 
-  const deleteTask = (id) => {
-    // использовать колбек с prev
-    setTasks(tasks.filter((task) => task.id !== id));
+  const handleDeleteTask = (id) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
 
   // задание - реализовать фильтры через query params (нужно чтобы при выборе фильтра менялся url)
@@ -78,14 +75,14 @@ export const TodoList = () => {
       if (priorityFilter === "all") return true;
       return task.priority === priorityFilter;
     });
+
   return (
     <div className="todo-list">
       <TaskInput
         newTaskData={newTaskData}
         setNewTaskData={setNewTaskData}
         optionsPriority={optionsPriority}
-        // onAddTask - пропсы функций начинаются с `on...`, а функция, которая передается с `handle...`
-        addTask={addTask}
+        onAddTask={handleAddTask}
       />
 
       <div className="filters">
@@ -104,8 +101,8 @@ export const TodoList = () => {
       </div>
       <TaskList
         tasks={filteredTasks}
-        toggleTask={toggleTask}
-        deleteTask={deleteTask}
+        onToggleTask={handleToggleTask}
+        onDeleteTask={handleDeleteTask}
       />
     </div>
   );

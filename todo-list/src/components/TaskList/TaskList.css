@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=League+Spartan:wght@100..900&display=swap");
+
+
+:active,
+:hover,
+:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.filters {
+    display: flex;
+    font-weight: 600;
+    justify-content: left;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.filters select {
+    margin-left: 20px;
+    padding-left: 8px;
+    width: 18%;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    background-color: #dfaea1;
+    font-weight: 600;
+    color: #374375;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 250px;
+    overflow-y: auto;
+    scrollbar-color: #babde2 #fffcf5;
+    scrollbar-width: thin;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    border-radius: 8px;
+    height: 30px;
+}
+
+.task input[type="checkbox"] {
+    accent-color: #dfaea1;
+}
+
+.task.completed span {
+    text-decoration: line-through;
+}
+
+.priority {
+    font-weight: 800;
+    margin-right: 10px;
+    color: #babde2;
+}
+
+.task-list button {
+    margin-right: 10px;
+    color: #dfaea1;
+    font-weight: 800;
+    background-color: rgb(137 81 90 / 0%);
+    border: none;
+}
+
+.task-list li:nth-child(odd) {
+    background-color: rgb(137 81 90 / 87%);
+}
+
+.task-list li:hover {
+    background-color: #dfaea1;
+
+    .priority {
+        color: #89515a;
+    }
+
+    button {
+        color: #374375;
+    }
+}

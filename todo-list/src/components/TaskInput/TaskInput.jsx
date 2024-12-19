@@ -1,6 +1,4 @@
-import React from "react";
-import SelectComponent from "../SelectComponent/SelectComponent";
-
+import { SelectComponent } from "../../API";
 import "./TaskInput.css";
 
 function TaskInput({

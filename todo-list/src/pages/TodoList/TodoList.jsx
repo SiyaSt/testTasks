@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import TaskInput from "../../components/TaskInput/TaskInput";
-import SelectComponent from "../../components/SelectComponent/SelectComponent";
-import TaskList from "../../components/TaskList/TaskList";
+import { SelectComponent, TaskInput, TaskList } from "../../API";
 
 import "./TodoList.css";
 

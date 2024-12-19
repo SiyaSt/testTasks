@@ -1,10 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-// для pages и components можно использовать public api (файл index.js)
-import HomePage from "./pages/HomePage/HomePage";
-import TodoList from "./pages/TodoList/TodoList";
-import AdditionalInformation from "./pages/AdditionalInformation/AdditionalInformation";
-import Layout from "./components/Layout/Layout";
+import { AdditionalInformation, HomePage, Layout, TodoList } from "./API";
 
 import "./styles/index.css";
 

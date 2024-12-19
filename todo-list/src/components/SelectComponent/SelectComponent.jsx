@@ -1,5 +1,3 @@
-import React from "react";
-
 function SelectComponent({ options, value, onChange }) {
   return (
     <select value={value} onChange={onChange}>

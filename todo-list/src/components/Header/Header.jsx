@@ -1,6 +1,4 @@
-import React from "react";
-import CustomLink from "../CustomLink/CustomLink";
-
+import { CustomLink } from "../../API";
 import "./Header.css";
 
 function Header() {

@@ -1,5 +1,3 @@
-import React from "react";
-
 import "./TaskList.css";
 
 function TaskListComponent({ tasks, toggleTask, deleteTask }) {

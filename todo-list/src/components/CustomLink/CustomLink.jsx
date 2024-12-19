@@ -1,18 +1,12 @@
 import { Link, useMatch } from "react-router-dom";
+import { classNames } from "../../utils/ClassName";
 
-export const CustomLink = ({ children, to, ...props }) => {
+export const CustomLink = ({ children, to, className, ...props }) => {
   const match = useMatch(to);
+  let names = classNames(className, { "active-link": match });
 
-  // лучше реализовать через классы по условию (используй classNames)
-  let active = match ? "#89515A" : "#374375";
   return (
-    <Link
-      to={to}
-      style={{
-        color: active,
-      }}
-      {...props}
-    >
+    <Link to={to} className={names} {...props}>
       {children}
     </Link>
   );

@@ -38,3 +38,7 @@
     font-size: 3vh;
     text-decoration: none;
 }
+
+.header-navigation .active-link {
+    color: #89515a;
+}

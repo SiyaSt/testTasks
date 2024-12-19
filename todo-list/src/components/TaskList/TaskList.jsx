@@ -1,10 +1,13 @@
+import { classNames } from "../../utils/ClassName";
 import "./TaskList.css";
 
 export const TaskList = ({ tasks, onToggleTask, onDeleteTask }) => (
   <ul className="task-list">
     {tasks.map((task) => (
-      // можно использовать библиотеку `classnames` - задание написать свою функцию аналог
-      <li key={task.id} className={`task ${task.completed ? "completed" : ""}`}>
+      <li
+        key={task.id}
+        className={classNames("task", { completed: task.completed })}
+      >
         <div>
           <input
             type="checkbox"

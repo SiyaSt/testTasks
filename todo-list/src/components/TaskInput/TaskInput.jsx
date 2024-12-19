@@ -2,10 +2,8 @@ import { SelectComponent } from "../../API";
 import "./TaskInput.css";
 
 export const TaskInput = ({
-  newTask,
-  setNewTask,
-  priority,
-  setPriority,
+  newTaskData,
+  setNewTaskData,
   optionsPriority,
   addTask,
 }) => (
@@ -13,13 +11,15 @@ export const TaskInput = ({
     <input
       type="text"
       placeholder="Add new task..."
-      value={newTask}
-      onChange={(e) => setNewTask(e.target.value)}
+      value={newTaskData.text}
+      onChange={(e) => setNewTaskData({ ...newTaskData, text: e.target.value })}
     />
     <SelectComponent
       options={optionsPriority}
-      value={priority}
-      onChange={(e) => setPriority(e.target.value)}
+      value={newTaskData.priority}
+      onChange={(e) =>
+        setNewTaskData({ ...newTaskData, priority: e.target.value })
+      }
     />
     <button onClick={addTask}>Add Task</button>
   </div>

@@ -12,9 +12,7 @@ export const TodoList = () => {
   const [filter, setFilter] = useState("all");
   const [priorityFilter, setPriorityFilter] = useState("all");
 
-  // можно вынести в один стейт - useState({ text: "", priority: "low" })
-  const [newTask, setNewTask] = useState("");
-  const [priority, setPriority] = useState("low");
+  const [newTaskData, setNewTaskData] = useState({ text: "", priority: "low" });
 
   const optionsFilter = [
     { value: "all", label: "All" },
@@ -41,14 +39,18 @@ export const TodoList = () => {
 
   // принято называть функции начиная с `handle...` (handleAddTask)
   const addTask = () => {
-    if (!newTask.trim()) return;
+    if (!newTaskData.text.trim()) return;
     // использовать колбек с prev
     setTasks([
       ...tasks,
-      { id: Date.now(), text: newTask, priority, completed: false },
+      {
+        id: Date.now(),
+        text: newTaskData.text,
+        priority: newTaskData.priority,
+        completed: false,
+      },
     ]);
-    setNewTask("");
-    setPriority("low");
+    setNewTaskData({ text: "", priority: "low" });
   };
 
   const toggleTask = (id) => {
@@ -79,10 +81,8 @@ export const TodoList = () => {
   return (
     <div className="todo-list">
       <TaskInput
-        newTask={newTask}
-        setNewTask={setNewTask}
-        priority={priority}
-        setPriority={setPriority}
+        newTaskData={newTaskData}
+        setNewTaskData={setNewTaskData}
         optionsPriority={optionsPriority}
         // onAddTask - пропсы функций начинаются с `on...`, а функция, которая передается с `handle...`
         addTask={addTask}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { SelectComponent, TaskInput, TaskList } from "../../API";
-
+import { useSearchParams } from "react-router-dom";
 import "./TodoList.css";
 
 export const TodoList = () => {
@@ -9,8 +9,12 @@ export const TodoList = () => {
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
 
-  const [filter, setFilter] = useState("all");
-  const [priorityFilter, setPriorityFilter] = useState("all");
+  const [searchParams, setSearchParams] = useSearchParams(); // Get search params
+  const filterParam = searchParams.get("filter") || "all";
+  const priorityFilterParam = searchParams.get("priority") || "all";
+
+  const [filter, setFilter] = useState(filterParam);
+  const [priorityFilter, setPriorityFilter] = useState(priorityFilterParam);
 
   const [newTaskData, setNewTaskData] = useState({ text: "", priority: "low" });
 
@@ -76,6 +80,16 @@ export const TodoList = () => {
       return task.priority === priorityFilter;
     });
 
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+    setSearchParams({ filter: newFilter, priority: priorityFilter });
+  };
+
+  const handlePriorityFilterChange = (newPriorityFilter) => {
+    setPriorityFilter(newPriorityFilter);
+    setSearchParams({ filter: filter, priority: newPriorityFilter });
+  };
+
   return (
     <div className="todo-list">
       <TaskInput
@@ -90,13 +104,13 @@ export const TodoList = () => {
         <SelectComponent
           options={optionsFilter}
           value={filter}
-          onChange={(e) => setFilter(e.target.value)}
+          onChange={(e) => handleFilterChange(e.target.value)}
         />
 
         <SelectComponent
           options={optionsFilterPriority}
           value={priorityFilter}
-          onChange={(e) => setPriorityFilter(e.target.value)}
+          onChange={(e) => handlePriorityFilterChange(e.target.value)}
         />
       </div>
       <TaskList

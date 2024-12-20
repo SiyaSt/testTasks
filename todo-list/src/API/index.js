@@ -10,6 +10,7 @@ import { SelectComponent } from "../components/SelectComponent/SelectComponent";
 import { TaskInput } from "../components/TaskInput/TaskInput";
 import { TaskList } from "../components/TaskList/TaskList";
 import { Logo } from "../components/Logo/Logo";
+import { Checkbox } from "../components/CheckBox/CheckBox";
 
 export {
   HomePage,
@@ -24,4 +25,5 @@ export {
   TaskInput,
   TaskList,
   Logo,
+  Checkbox,
 };

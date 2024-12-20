@@ -5,33 +5,32 @@
     display: flex;
     position: relative;
     width: 100%;
-    height: 120px;
+    min-height: 120px;
     margin-bottom: 30px;
     align-items: center;
     background-color: #babde2;
-}
-
-.header-icon {
-    margin-left: 20px;
+    padding: 0 50px;
+    gap: 20px;
 }
 
 .header-name {
+    width: 25%;
     font-family: "Inria Sans", sans-serif;
     font-weight: 600;
     font-style: normal;
     font-size: 5rem;
     color: #374375;
-    margin-left: 40px;
+
 }
 
 .header-navigation {
-    width: 60%;
+    width: 65%;
     display: flex;
     justify-content: flex-end;
+    gap: 50px;
 }
 
 .header-navigation .link {
-    margin-left: 50px;
     font-family: "Inria Sans", sans-serif;
     font-style: normal;
     color: #374375;

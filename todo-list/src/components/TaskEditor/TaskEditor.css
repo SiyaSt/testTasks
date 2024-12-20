@@ -1,0 +1,12 @@
+.editor {
+    display: flex;
+    gap: 10px;
+}
+
+.editor-input {
+    border-radius: 8px;
+    border: none;
+    background-color: #fffcf5;
+    font-weight: 600;
+    color: #374375;
+}

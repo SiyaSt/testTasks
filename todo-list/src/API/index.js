@@ -11,6 +11,7 @@ import { TaskInput } from "../components/TaskInput/TaskInput";
 import { TaskList } from "../components/TaskList/TaskList";
 import { Logo } from "../components/Logo/Logo";
 import { Checkbox } from "../components/CheckBox/CheckBox";
+import { TaskEditor } from "../components/TaskEditor/TaskEditor";
 
 export {
   HomePage,
@@ -26,4 +27,5 @@ export {
   TaskList,
   Logo,
   Checkbox,
+  TaskEditor,
 };

@@ -68,7 +68,13 @@ export const TodoList = () => {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
 
-  // задание - реализовать фильтры через query params (нужно чтобы при выборе фильтра менялся url)
+  const handleEditTask = (taskId, newText) => {
+    const updatedTasks = tasks.map((task) =>
+      task.id === taskId ? { ...task, text: newText } : task,
+    );
+    setTasks(updatedTasks);
+  };
+
   const filteredTasks = tasks
     .filter((task) => {
       if (filter === "completed") return task.completed;
@@ -117,6 +123,7 @@ export const TodoList = () => {
         tasks={filteredTasks}
         onToggleTask={handleToggleTask}
         onDeleteTask={handleDeleteTask}
+        onEditTask={handleEditTask}
       />
     </div>
   );

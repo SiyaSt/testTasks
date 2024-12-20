@@ -20,6 +20,7 @@
 .task {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 10px 0;
     padding-left: 10px;
     padding-right: 10px;
@@ -44,7 +45,6 @@
 }
 
 .task-list button {
-    margin-right: 10px;
     color: #dfaea1;
     font-weight: 800;
     background-color: rgb(137 81 90 / 0%);

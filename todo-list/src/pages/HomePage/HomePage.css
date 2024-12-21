@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=League+Spartan:wght@100..900&display=swap");
+
+.main {
+    flex: 1 0 auto;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #374375;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.main h3 {
+    background-color: #babde2;
+    border-radius: 8px;
+    height: 25px;
+    padding: 10px;
+}
+
+.main-text {
+    margin-top: 20px;
+}

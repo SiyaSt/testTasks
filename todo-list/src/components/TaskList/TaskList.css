@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=League+Spartan:wght@100..900&display=swap");
+
+:active,
+:hover,
+:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 0 10px;
+    border-radius: 8px;
+    height: 30px;
+}
+
+.task-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task.completed .task-list-text {
+    text-decoration: line-through;
+}
+
+.priority {
+    font-weight: 800;
+    margin-right: 10px;
+    color: #babde2;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 10px
+}
+
+.task-list button {
+    color: #dfaea1;
+    font-weight: 800;
+    background-color: rgb(137 81 90 / 0%);
+    border: none;
+}
+
+.task-list li:nth-child(odd) {
+    background-color: rgb(137 81 90 / 87%);
+}
+
+.task-list li:hover {
+    background-color: #dfaea1;
+
+    .priority {
+        color: #89515a;
+    }
+
+    button {
+        color: #374375;
+    }
+}

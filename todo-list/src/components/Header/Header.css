@@ -22,22 +22,3 @@
     color: #374375;
 
 }
-
-.header-navigation {
-    width: 65%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 50px;
-}
-
-.header-navigation .link {
-    font-family: "Inria Sans", sans-serif;
-    font-style: normal;
-    color: #374375;
-    font-size: 3vh;
-    text-decoration: none;
-}
-
-.header-navigation .active-link {
-    color: #89515a;
-}

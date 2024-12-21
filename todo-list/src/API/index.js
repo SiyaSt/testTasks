@@ -12,6 +12,8 @@ import { TaskList } from "../components/TaskList/TaskList";
 import { Logo } from "../components/Logo/Logo";
 import { Checkbox } from "../components/CheckBox/CheckBox";
 import { TaskEditor } from "../components/TaskEditor/TaskEditor";
+import { DropdownMenu } from "../components/DropdownMenu/DropdownMenu";
+import { NavigationComponent } from "../components/Navigation/NavigationComponent";
 
 export {
   HomePage,
@@ -28,4 +30,6 @@ export {
   Logo,
   Checkbox,
   TaskEditor,
+  DropdownMenu,
+  NavigationComponent,
 };

@@ -14,6 +14,8 @@ import { Checkbox } from "../components/CheckBox/CheckBox";
 import { TaskEditor } from "../components/TaskEditor/TaskEditor";
 import { DropdownMenu } from "../components/DropdownMenu/DropdownMenu";
 import { NavigationComponent } from "../components/Navigation/NavigationComponent";
+import { DropdownContext } from "../context/DropdownContext/DropdownContext";
+import { useDropdownContext } from "../context/DropdownContext/DropdownContext";
 
 export {
   HomePage,
@@ -32,4 +34,6 @@ export {
   TaskEditor,
   DropdownMenu,
   NavigationComponent,
+  DropdownContext,
+  useDropdownContext,
 };

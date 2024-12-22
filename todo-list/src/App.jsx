@@ -8,7 +8,7 @@ import {
   TodoList,
 } from "./API";
 
-import "./styles/index.css";
+import "./styles/index.scss";
 
 export const App = () => {
   const [isOpen, setIsOpen] = useState(false);

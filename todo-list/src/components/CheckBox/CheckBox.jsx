@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./CheckBox.css";
+import "./CheckBox.scss";
 
 export const Checkbox = ({ checked: initialChecked, onChange, className }) => {
   const [checked, setChecked] = useState(initialChecked);

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./TaskEditor.css";
+import "./TaskEditor.scss";
 
 export const TaskEditor = ({ taskId, initialText, onSave, onCancel }) => {
   const [editText, setEditText] = useState(initialText);

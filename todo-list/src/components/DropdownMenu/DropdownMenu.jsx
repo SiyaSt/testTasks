@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { classNames } from "../../utils/ClassName";
 import { NavigationComponent, useDropdownContext } from "../../API";
-import "./Dropdownmenu.css";
+import "./DropdownMenu.scss";
 
 export const DropdownMenu = () => {
   const { isOpen, setIsOpen } = useDropdownContext();

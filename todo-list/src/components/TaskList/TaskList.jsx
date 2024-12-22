@@ -2,7 +2,7 @@ import { classNames } from "../../utils/ClassName";
 import { Checkbox, TaskEditor } from "../../API";
 import { useState } from "react";
 
-import "./TaskList.css";
+import "./TaskList.scss";
 
 export const TaskList = ({ tasks, onToggleTask, onDeleteTask, onEditTask }) => {
   const [editingTask, setEditingTask] = useState(null);

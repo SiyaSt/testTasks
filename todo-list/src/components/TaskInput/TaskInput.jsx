@@ -1,5 +1,5 @@
 import { SelectComponent } from "../../API";
-import "./TaskInput.css";
+import "./TaskInput.scss";
 
 export const TaskInput = ({
   newTaskData,

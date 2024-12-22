@@ -1,5 +1,5 @@
 import { DropdownMenu, Logo, NavigationComponent } from "../../API";
-import "./Header.css";
+import "./Header.scss";
 
 export const Header = () => (
   <header className="header">

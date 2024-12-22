@@ -1,4 +1,4 @@
-import "./Main.css";
+import "./Main.scss";
 
 export const Main = () => (
   <main className="main">

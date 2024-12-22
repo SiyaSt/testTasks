@@ -59,7 +59,7 @@
 
 .task-list li {
   &:nth-child(odd) {
-    background-color: $accent-color_dark;
+    background-color: rgba(137, 81, 90, 0.87);
   }
 
   &:hover {

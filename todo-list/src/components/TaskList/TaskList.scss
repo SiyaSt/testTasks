@@ -1,0 +1,76 @@
+@use "../../styles/base" as *;
+
+:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task {
+  @include flexbox;
+  justify-content: space-between;
+  margin: 10px 0;
+  padding: 0 10px;
+  border-radius: 8px;
+  min-height: 30px;
+
+  &.completed {
+    .task-list-text {
+      text-decoration: line-through;
+    }
+  }
+}
+
+.task-container {
+  @include flexbox;
+  justify-content: center;
+}
+
+.task-list-text {
+  max-width: 200px;
+  white-space: pre-wrap;
+}
+
+.priority {
+  font-weight: 800;
+  margin-right: 10px;
+  color: $background-color;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 10px
+}
+
+.task-list button {
+  color: $accent-color_light;
+  font-weight: 800;
+  background-color: rgb(137 81 90 / 0%);
+  border: none;
+}
+
+
+.task-list li {
+  &:nth-child(odd) {
+    background-color: rgba(137, 81, 90, 0.87);
+  }
+
+  &:hover {
+    background-color: $accent-color_light;
+
+    .priority {
+      color: $accent-color_dark;
+    }
+
+    button {
+      color: $text-color;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@use "../../styles/base" as *;
+
+.main {
+  flex: 1 0 auto;
+  @include text_style(500, 16px);
+  display: flex;
+  text-align: left;
+
+  h3 {
+    background-color: $background-color;
+    border-radius: 8px;
+    height: 40px;
+    padding: 10px;
+  }
+
+  ol {
+    padding: 0;
+    margin: 10px 0 20px;
+    list-style-position: inside;
+  }
+
+  .link {
+    font-family: "Inria Sans", sans-serif;
+    font-style: normal;
+    color: $text-color;
+    text-decoration: none;
+  }
+}
+
+.main-text {
+  max-width: 90%;
+  margin-top: 20px;
+}

@@ -1,0 +1,60 @@
+@use "../../styles/base" as *;
+
+.dropdown-container {
+  position: relative;
+  display: none;
+  width: 50%;
+}
+
+.dropdown-button {
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: $background-color;
+  border: none;
+  color: $text-color;
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  background-color: $background-color;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 20%);
+  list-style: none;
+  z-index: 1;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &.show {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.dropdown-menu {
+  .link {
+    @include text_style(500, 18px);
+    text-decoration: none;
+    padding: 12px;
+
+    &:hover {
+      background-color: $accent-color_light;
+    }
+  }
+
+  .active-link {
+    color: $accent-color_dark;
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .dropdown-container {
+    display: inline-flex;
+    justify-content: flex-end;
+  }
+
+}

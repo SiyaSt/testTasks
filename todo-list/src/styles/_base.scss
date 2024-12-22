@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=League+Spartan:wght@100..900&display=swap");
+
+$text-color: #374375;
+$accent-color_dark: #89515a;
+$accent-color_light: #dfaea1;
+$background-color: #babde2;
+$background-color_light: #fffcf5;
+$breakpoint-small: 700px;
+
+@mixin flexbox() {
+  display: flex;
+  align-items: center;
+}
+
+@mixin text_style($weight, $size) {
+  font-family: "Inria Sans", sans-serif;
+  font-style: normal;
+  color: $text-color;
+  font-weight: $weight;
+  font-size: $size;
+}

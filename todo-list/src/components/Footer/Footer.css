@@ -26,3 +26,16 @@
     text-decoration: none;
     color: #374375;
 }
+
+@media screen and (width <= 800px) {
+    .footer {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+        gap: 10px;
+    }
+
+    .footer p {
+        font-size: 3vh;
+    }
+
+}

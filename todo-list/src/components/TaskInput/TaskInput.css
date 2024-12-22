@@ -52,3 +52,15 @@
     color: #dfaea1;
     padding: 8px 12px;
 }
+
+@media screen and (width <= 600px) {
+    .task-input button {
+        font-size: 10px;
+        width: 15%;
+    }
+
+    .task-input select {
+        width: 25%;
+        font-size: 11px;
+    }
+}

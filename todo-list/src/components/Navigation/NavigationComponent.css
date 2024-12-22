@@ -16,3 +16,10 @@
 .header-navigation .active-link {
     color: #89515a;
 }
+
+@media screen and (width <= 650px) {
+    .header-navigation {
+        display: none;
+    }
+
+}

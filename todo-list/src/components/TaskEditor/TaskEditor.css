@@ -11,3 +11,25 @@
     color: #374375;
     padding: 3px;
 }
+
+@media screen and (width <= 600px) {
+    .editor {
+        width: 200px;
+    }
+
+    .editor-input {
+        max-width: 60%;
+    }
+
+    .save-button::before {
+        content: "\2713";
+    }
+
+    .cancel-button::before {
+        content: "X";
+    }
+
+    .editor button span {
+        display: none;
+    }
+}

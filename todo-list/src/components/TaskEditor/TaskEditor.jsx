@@ -12,8 +12,12 @@ export const TaskEditor = ({ taskId, initialText, onSave, onCancel }) => {
         onChange={(e) => setEditText(e.target.value)}
         className="editor-input"
       />
-      <button onClick={() => onSave(taskId, editText)}>Save</button>
-      <button onClick={onCancel}>Cancel</button>
+      <button className="save-button" onClick={() => onSave(taskId, editText)}>
+        <span>Save</span>
+      </button>
+      <button className="cancel-button" onClick={onCancel}>
+        <span>Cancel</span>
+      </button>
     </div>
   );
 };

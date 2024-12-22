@@ -22,3 +22,14 @@
     color: #374375;
 
 }
+
+@media screen and (width <= 600px) {
+    .header-name {
+        font-size: 3rem;
+    }
+
+    .header {
+        padding: 0 20px;
+    }
+
+}

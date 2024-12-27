@@ -11,10 +11,16 @@
   background-color: $background-color;
   padding: 0 50px;
   gap: 20px;
+  justify-content: space-between;
+}
+
+.header-title {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .header-name {
-  width: 25%;
   @include text_style(600, 5rem);
   color: #374375;
 

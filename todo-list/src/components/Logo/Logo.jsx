@@ -1,5 +1,6 @@
+import { ReactComponent as LogoSvg } from "./logo.svg";
 import "./Logo.scss";
 
 export const Logo = () => {
-  return <img src="/images/logo.svg" alt="" className="header-icon" />;
+  return <LogoSvg className="header-icon" alt="Company Logo" />;
 };

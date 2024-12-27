@@ -1,3 +1,3 @@
-import { Main } from "../../API";
+import { Main } from "../../components";
 
 export const AdditionalInformation = () => <Main />;

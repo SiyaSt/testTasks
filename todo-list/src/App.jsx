@@ -1,13 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import {
-  AdditionalInformation,
-  DropdownContext,
-  HomePage,
-  Layout,
-  TodoList,
-} from "./API";
-
+import { AdditionalInformation, HomePage, TodoList } from "./pages";
+import { DropdownContext } from "./context";
+import { Layout } from "./components";
 import "./styles/index.scss";
 
 export const App = () => {

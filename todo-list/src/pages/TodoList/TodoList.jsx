@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { SelectComponent, TaskInput, TaskList } from "../../API";
 import { useSearchParams } from "react-router-dom";
+import { SelectComponent, TaskInput, TaskList } from "../../components";
 import "./TodoList.scss";
 
 export const TodoList = () => {

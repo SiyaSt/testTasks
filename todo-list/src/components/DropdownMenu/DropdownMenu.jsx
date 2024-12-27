@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import { classNames } from "../../utils/ClassName";
-import { NavigationComponent, useDropdownContext } from "../../API";
+import { NavigationComponent } from "../../components";
+import { useDropdownContext } from "../../context";
 import "./DropdownMenu.scss";
 
 export const DropdownMenu = () => {

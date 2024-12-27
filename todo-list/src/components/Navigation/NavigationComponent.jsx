@@ -1,4 +1,4 @@
-import { CustomLink } from "../../API";
+import { CustomLink } from "../../components";
 import "./NavigationComponent.scss";
 
 export const NavigationComponent = ({ className }) => {

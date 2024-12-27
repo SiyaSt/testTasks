@@ -1,4 +1,4 @@
-import { SelectComponent } from "../../API";
+import { SelectComponent } from "../../components";
 import "./TaskInput.scss";
 
 export const TaskInput = ({

@@ -1,6 +1,6 @@
 import { classNames } from "../../utils/ClassName";
-import { Checkbox, TaskEditor } from "../../API";
 import { useState } from "react";
+import { Checkbox, TaskEditor } from "../../components";
 
 import "./TaskList.scss";
 

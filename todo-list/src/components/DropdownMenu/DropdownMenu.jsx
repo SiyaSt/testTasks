@@ -25,8 +25,8 @@ export const DropdownMenu = () => {
   }, [setIsOpen]);
 
   return (
-    <div className="dropdown-container" ref={menuRef}>
-      <button onClick={toggleMenu} className="dropdown-button">
+    <div className="dropdown-container">
+      <button onClick={toggleMenu} className="dropdown-button" ref={menuRef}>
         ☰
       </button>
       <NavigationComponent

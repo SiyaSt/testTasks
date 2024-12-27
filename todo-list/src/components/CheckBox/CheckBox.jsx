@@ -20,7 +20,7 @@ export const Checkbox = ({ checked: initialChecked, onChange, className }) => {
         className="checkbox-input"
       />
       <span className="checkbox-box">
-        {checked && <span className="checkbox-check">✓</span>}
+        {checked && <span className="checkbox-check"></span>}
       </span>
     </label>
   );

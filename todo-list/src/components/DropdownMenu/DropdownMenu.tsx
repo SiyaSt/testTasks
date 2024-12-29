@@ -1,20 +1,21 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, FC } from "react";
 import { classNames } from "../../utils/ClassName";
-import { NavigationComponent } from "../../components";
+import { NavigationComponent } from "../index";
 import { useDropdownContext } from "../../context";
 import "./DropdownMenu.scss";
+import { DropdownContextType } from "../../types/types";
 
-export const DropdownMenu = () => {
-  const { isOpen, setIsOpen } = useDropdownContext();
-  const menuRef = useRef(null);
+export const DropdownMenu: FC = () => {
+  const { isOpen, setIsOpen }: DropdownContextType = useDropdownContext();
+  const menuRef = useRef<HTMLButtonElement>(null);
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     };

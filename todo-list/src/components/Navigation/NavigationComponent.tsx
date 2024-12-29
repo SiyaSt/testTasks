@@ -1,7 +1,14 @@
-import { CustomLink } from "../../components";
+import { CustomLink } from "../index";
 import "./NavigationComponent.scss";
+import { FC } from "react";
 
-export const NavigationComponent = ({ className }) => {
+interface NavigationComponentProps {
+  className: string;
+}
+
+export const NavigationComponent: FC<NavigationComponentProps> = ({
+  className,
+}) => {
   return (
     <div className={className}>
       <CustomLink className="link" to="/">

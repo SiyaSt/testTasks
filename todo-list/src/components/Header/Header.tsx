@@ -1,7 +1,8 @@
-import { DropdownMenu, Logo, NavigationComponent } from "../../components";
+import { FC } from "react";
+import { DropdownMenu, Logo, NavigationComponent } from "../index";
 import "./Header.scss";
 
-export const Header = () => (
+export const Header: FC = () => (
   <header className="header">
     <div className="header-title">
       <Logo />

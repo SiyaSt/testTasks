@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import { Dispatch, FC, SetStateAction, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { AdditionalInformation, HomePage, TodoList } from "./pages";
 import { DropdownContext } from "./context";
 import { Layout } from "./components";
 import "./styles/index.scss";
 
-export const App = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface AppContextValue {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}
 
-  const contextValue = {
+export const App: FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const contextValue: AppContextValue = {
     isOpen,
     setIsOpen,
   };

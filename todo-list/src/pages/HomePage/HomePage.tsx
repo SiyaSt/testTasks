@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-
+import { FC } from "react";
 import "./HomePage.scss";
 
-export const HomePage = () => (
+export const HomePage: FC = () => (
   <main className="main">
     <h3>This is homepage!</h3>
     <p className="main-text">

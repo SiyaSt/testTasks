@@ -1,6 +1,7 @@
+import { FC } from "react";
 import "./Main.scss";
 
-export const Main = () => (
+export const Main: FC = () => (
   <main className="main">
     <h3>Интересные факты о котиках</h3>
     <div className="main-text">

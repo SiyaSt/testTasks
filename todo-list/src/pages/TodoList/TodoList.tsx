@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { ChangeEvent, FC, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { SelectComponent, TaskInput, TaskList } from "../../components";
 import "./TodoList.scss";
+import { Options, Task } from "../../types/types";
 
-export const TodoList = () => {
-  const [tasks, setTasks] = useState(() => {
+export const TodoList: FC = () => {
+  const [tasks, setTasks] = useState<Task[]>(() => {
     const savedTasks = localStorage.getItem("tasks");
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
@@ -13,25 +14,31 @@ export const TodoList = () => {
   const filterParam = searchParams.get("filter") || "all";
   const priorityFilterParam = searchParams.get("priority") || "all";
 
-  const [filter, setFilter] = useState(filterParam);
-  const [priorityFilter, setPriorityFilter] = useState(priorityFilterParam);
+  const [filter, setFilter] = useState<string>(filterParam);
+  const [priorityFilter, setPriorityFilter] =
+    useState<string>(priorityFilterParam);
 
-  const [newTaskData, setNewTaskData] = useState({ text: "", priority: "low" });
+  const [newTaskData, setNewTaskData] = useState<Task>({
+    text: "",
+    completed: false,
+    id: 0,
+    priority: "low",
+  });
 
-  const optionsFilter = [
+  const optionsFilter: Options[] = [
     { value: "all", label: "All" },
     { value: "active", label: "Active" },
     { value: "completed", label: "Completed" },
   ];
 
-  const optionsFilterPriority = [
+  const optionsFilterPriority: Options[] = [
     { value: "all", label: "All" },
     { value: "low", label: "Low" },
     { value: "medium", label: "Medium" },
     { value: "high", label: "High" },
   ];
 
-  const optionsPriority = [
+  const optionsPriority: Options[] = [
     { value: "low", label: "Low" },
     { value: "medium", label: "Medium" },
     { value: "high", label: "High" },
@@ -53,10 +60,10 @@ export const TodoList = () => {
         completed: false,
       },
     ]);
-    setNewTaskData({ text: "", priority: "low" });
+    setNewTaskData({ completed: false, id: 0, text: "", priority: "low" });
   };
 
-  const handleToggleTask = (id) => {
+  const handleToggleTask = (id: number) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
         task.id === id ? { ...task, completed: !task.completed } : task,
@@ -64,11 +71,11 @@ export const TodoList = () => {
     );
   };
 
-  const handleDeleteTask = (id) => {
+  const handleDeleteTask = (id: number) => {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
 
-  const handleEditTask = (taskId, newText) => {
+  const handleEditTask = (taskId: number, newText: string) => {
     const updatedTasks = tasks.map((task) =>
       task.id === taskId ? { ...task, text: newText } : task,
     );
@@ -86,12 +93,12 @@ export const TodoList = () => {
       return task.priority === priorityFilter;
     });
 
-  const handleFilterChange = (newFilter) => {
+  const handleFilterChange = (newFilter: string) => {
     setFilter(newFilter);
     setSearchParams({ filter: newFilter, priority: priorityFilter });
   };
 
-  const handlePriorityFilterChange = (newPriorityFilter) => {
+  const handlePriorityFilterChange = (newPriorityFilter: string) => {
     setPriorityFilter(newPriorityFilter);
     setSearchParams({ filter: filter, priority: newPriorityFilter });
   };
@@ -110,13 +117,17 @@ export const TodoList = () => {
         <SelectComponent
           options={optionsFilter}
           value={filter}
-          onChange={(e) => handleFilterChange(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+            handleFilterChange(e.target.value)
+          }
         />
 
         <SelectComponent
           options={optionsFilterPriority}
           value={priorityFilter}
-          onChange={(e) => handlePriorityFilterChange(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+            handlePriorityFilterChange(e.target.value)
+          }
         />
       </div>
       <TaskList

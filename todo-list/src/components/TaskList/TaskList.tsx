@@ -1,17 +1,30 @@
 import { classNames } from "../../utils/ClassName";
-import { useState } from "react";
-import { Checkbox, TaskEditor } from "../../components";
+import { FC, useState } from "react";
+import { Checkbox, TaskEditor } from "../index";
+import { Task } from "../../types/types";
 
 import "./TaskList.scss";
 
-export const TaskList = ({ tasks, onToggleTask, onDeleteTask, onEditTask }) => {
-  const [editingTask, setEditingTask] = useState(null);
+interface TaskListProps {
+  tasks: Task[];
+  onToggleTask: (taskId: number) => void;
+  onDeleteTask: (taskId: number) => void;
+  onEditTask: (taskId: number, newText: string) => void;
+}
 
-  const handleEditClick = (taskId) => {
+export const TaskList: FC<TaskListProps> = ({
+  tasks,
+  onToggleTask,
+  onDeleteTask,
+  onEditTask,
+}) => {
+  const [editingTask, setEditingTask] = useState<number | null>(null);
+
+  const handleEditClick = (taskId: number) => {
     setEditingTask(taskId);
   };
 
-  const handleSaveClick = (taskId, newText) => {
+  const handleSaveClick = (taskId: number, newText: string) => {
     onEditTask(taskId, newText);
     setEditingTask(null);
   };

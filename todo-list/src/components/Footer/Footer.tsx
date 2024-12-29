@@ -1,6 +1,7 @@
+import { FC } from "react";
 import "./Footer.scss";
 
-export const Footer = () => (
+export const Footer: FC = () => (
   <footer className="footer">
     <p>
       Telegram: <a href="https://t.me/ooooh_shit">@ooooh_shit</a>

@@ -1,0 +1,37 @@
+@use "../../styles/base" as *;
+
+.editor {
+  display: flex;
+  gap: 10px;
+}
+
+.editor-input {
+  border-radius: 8px;
+  border: none;
+  background-color: $background-color_light;
+  font-weight: 600;
+  color: $text-color;
+  padding: 3px;
+}
+
+@media screen and (width <= $breakpoint-small) {
+  .editor {
+    width: 200px;
+  }
+
+  .editor-input {
+    max-width: 60%;
+  }
+
+  .save-button::before {
+    content: "\2713";
+  }
+
+  .cancel-button::before {
+    content: "X";
+  }
+
+  .editor button span {
+    display: none;
+  }
+}

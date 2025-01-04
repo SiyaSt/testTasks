@@ -1,0 +1,33 @@
+@use "../../styles/base" as *;
+
+.checkbox {
+  display: inline-flex;
+  cursor: pointer;
+  user-select: none;
+  margin-right: 8px;
+}
+
+.checkbox-input {
+  display: none;
+}
+
+.checkbox-box {
+  @include flexbox;
+  width: 15px;
+  height: 15px;
+  border: 2px solid $text-color;
+  border-radius: 3px;
+  background-color: $accent-color_light;
+  margin-right: 5px;
+  justify-content: center;
+}
+
+.checkbox-check::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url("../../../public/images/tick_mark_aikwmaebwh4v.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}

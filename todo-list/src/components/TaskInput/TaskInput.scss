@@ -1,0 +1,57 @@
+@use "../../styles/base" as *;
+
+@mixin task-input($background, $color) {
+  border-radius: 8px;
+  border: none;
+  background-color: $background;
+  font-weight: 600;
+  color: $color;
+}
+
+.task-input {
+  @include flexbox;
+  background-color: $background-color;
+  height: 50px;
+  padding: 10px;
+  border-radius: 8px;
+  gap: 10px
+}
+
+.task-input input {
+  width: 60%;
+  @include task-input($background-color_light, $text-color);
+}
+
+.task-input select {
+  width: 20%;
+  @include task-input($accent-color_light, $text-color)
+}
+
+.task-input select option,
+.filters select option {
+  @include task-input($accent-color_light, $text-color)
+}
+
+.task-input input,
+.task-input select {
+  padding: 8px;
+}
+
+.task-input button {
+  width: 20%;
+  @include task-input($accent-color_dark, $accent-color_light);
+  padding: 8px 12px;
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .task-input button {
+    font-size: 10px;
+    width: 15%;
+  }
+
+  .task-input select {
+    width: 25%;
+    font-size: 11px;
+  }
+}
+

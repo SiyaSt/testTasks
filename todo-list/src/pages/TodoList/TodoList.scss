@@ -1,0 +1,33 @@
+@use "../../styles/base" as *;
+
+.filters {
+  display: flex;
+  font-weight: 600;
+  padding-top: 10px;
+  gap: 20px;
+}
+
+.filters select {
+  padding-left: 8px;
+  width: 18%;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+  background-color: $accent-color_light;
+  font-weight: 600;
+  color: $text-color;
+}
+
+.todo-list {
+  @include text_style(500, 16px);
+  flex: 1 0 auto;
+  max-width: 90%;
+  text-align: center;
+  margin: 10px 90px 30px;
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .todo-list {
+    margin: 10px 40px 30px;
+  }
+}

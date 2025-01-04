@@ -1,0 +1,8 @@
+@use "../../styles/base" as *;
+
+@media screen and (width <= $breakpoint-small) {
+  .header-icon {
+    width: 100px;
+  }
+
+}
